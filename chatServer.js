@@ -36,3 +36,7 @@ function getTimeStamp(addday) {
     var d=new Date();
     return d.getFullYear() + '-' + (Number(d.getMonth())+1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
 }
+
+server.listen(3003, function () {
+    console.log('Socket IO server listening on port 3003');
+});
