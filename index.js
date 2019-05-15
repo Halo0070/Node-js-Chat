@@ -25,3 +25,7 @@ app.post('/write', function (req, res) {
     res.jsonp(result_date);
     res.end();
 });
+
+var server=app.listen(3000, function () {
+    console.log("Go!");
+});
