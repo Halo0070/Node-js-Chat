@@ -15,7 +15,7 @@ app.get('/write', function (req, res) {
 });
 
 app.post('/write', function (req, res) {
-    res.send(req.body);
+    //res.send(req.body);
     let content=req.body;
     let doc=JSON.parse(JSON.stringify(content));
     let result_date = {

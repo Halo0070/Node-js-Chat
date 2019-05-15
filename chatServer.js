@@ -15,7 +15,7 @@ var chat=io.of('/chat').on('connection', function(socket) {
 
         var name=socket.name=data.name;
         var room=socket.room=data.room;
-        var type=socket.room=data.type;
+        var type=socket.room=data.types;
 
         // room에 join함.
         socket.join(room);
