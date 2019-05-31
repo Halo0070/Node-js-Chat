@@ -51,6 +51,23 @@
                         </div>
                     </div>
             </form>
+        <ul id="chat" style="border: 1px soild; padding: 10px; display:none; list-style: none;"></ul>
         </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+            <script src="/socket.io/socket.io.js"></script>
+            <script>
+                var name = "";
+                var room = "";
+                var login_state = "off";
+                var msg = "";
+
+                // 지정 namespace로 접속함.
+                var chat = io('http://localhost:3003/chat'),
+                    news = io('/news');
+
+                $(function() {
+                    
+                });
+            </script>
     </body>
 </html>
