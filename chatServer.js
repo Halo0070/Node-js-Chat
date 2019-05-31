@@ -35,6 +35,10 @@ var chat=io.of('/chat').on('connection', function(socket) {
         socket.emit('system', {
             message : '채팅방에 접속 하신 것을 환영합니다!'
         });
+
+        socket.broadcast.to(data.room).emit('system', {
+            message : data.name + '님이 접속했습니다.'
+        })
     });
 });
 
