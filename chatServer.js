@@ -2,6 +2,8 @@ var app=require('express')();
 var server=require('http').createServer(app);
 // http server를 socket.io server로 upgrade함.
 var io=require('socket.io')(server);
+var ejs=require('ejs');
+var NickName="";
 
 // localhost:3003으로 server에 접속하면 client로 chatFront.html을 전송함.
 app.get('/', function(req, res) {
@@ -29,6 +31,10 @@ var chat=io.of('/chat').on('connection', function(socket) {
         };
         // room에 join되어 있는 client에게 message를 전송함.
         chat.to(room).emit('chat message', return_date);
+
+        socket.emit('system', {
+            message : '채팅방에 접속 하신 것을 환영합니다!'
+        });
     });
 });
 
