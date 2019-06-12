@@ -68,6 +68,24 @@
                     news = io('/news');
 
                 $(function() {
+                    $("form").submit(function (e) {
+                        if (login_state == "off") {
+                            $("#name_group").hide();
+                            $("#room_group").hide();
+                            $("#chat").show();
+                            $("#msg_group").show();
+                            $("#exit").show();
+                            $("#submit").html("보내기");
+
+                            login_state = "on";
+                            name = $("#name").val();
+                            room = $("#room").val();
+                            msg = $("#name").val() + "님이 로그인 하셨습니다.";
+                            type = "join";
+                        } else {
+                            type = "msg";
+                            msg = $("#msg").val();
+                        }
                     
                 });
             </script>
