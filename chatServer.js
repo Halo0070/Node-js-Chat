@@ -15,9 +15,11 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/chatFront.html');
 });
 
+/*
 app.post('/', function(req, res){
     console.log('POST');
 })
+*/
 
 // namespace /chat에 접속.
 var chat=io.of('/chat').on('connection', function(socket) {
